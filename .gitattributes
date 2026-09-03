@@ -1,0 +1,12 @@
+# 统一使用 LF 换行
+#
+# 关键原因: shell 脚本若被转成 CRLF, 在 Linux 上执行会报
+#   bash: $'\r': command not found
+# Windows 上 git 默认 core.autocrlf=true 会在检出时把 LF 转成 CRLF,
+# 这里强制所有文本文件保持 LF, 避免脚本下载到服务器后跑不起来。
+
+* text=auto eol=lf
+
+*.sh  text eol=lf
+*.php text eol=lf
+*.md  text eol=lf
